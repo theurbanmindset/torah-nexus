@@ -51,10 +51,18 @@
       credits: ["A Land Apart (as Bakare)"] },
   ];
 
+  // Team profiles (#team/<slug>). Bios come from each person's Instagram (shared by the owner 2026-10-14).
+  // `photo` shows on the profile page only; `img` stays as the round photo in the team section.
   const team = [
-    { name: "Obiabo Celine", role: "Business Development Manager", img: "team-celine.jpg" },
-    { name: "Anozie Naza", role: "Media & Creative Officer", img: "team-naza.jpg" },
-    { name: "Ekre Christian", role: "Media & Creative Officer", img: "team-christian.jpg" },
+    { slug: "celine", name: "Obiabo Celine", first: "Obiabo", last: "Celine", role: "Business Development Manager", img: "team-celine.jpg", photo: "profile-celine.jpg",
+      bio: "I help brands, businesses and public figures find the right way to tell their story. My background runs across media production, event coverage, sales and Nollywood makeup, so I know what it takes to make people look and sound their best on camera. From the first conversation to the final plan, I make sure every project with Torah Nexus starts with clear goals.",
+      focus: ["Client partnerships", "Media production", "Event coverage"], ig: "celines_integrated_resources" },
+    { slug: "naza", name: "Anozie Naza", first: "Anozie", last: "Naza", role: "Media & Creative Officer", img: "team-naza.jpg", photo: "profile-naza.jpg",
+      bio: "I am a media and communications professional working across Torah Nexus and Torah Homz, the group's real estate brand in Abuja. I plan, shoot and share the stories behind our brands, from site visits to customer events, so people can see the work and the people behind it.",
+      focus: ["Media & communications", "Real estate content", "Social media"], ig: "naza__anozie" },
+    { slug: "christian", name: "Ekre Christian", first: "Ekre", last: "Christian", role: "Media & Creative Officer", img: "team-christian.jpg", photo: "profile-christian.jpg",
+      bio: "I am an actor, producer and filmmaker. At Torah Nexus I bring that experience in front of and behind the camera to our commercials and campaigns, and I also serve as Sales and Marketing Executive for Torah Homz, the group's real estate brand.",
+      focus: ["Film production", "Acting", "Sales & marketing"], ig: "chrisjohnsonekre", email: "Krisara.ao@gmail.com" },
   ];
 
   const brands = [
@@ -163,6 +171,8 @@
     upright: '<path d="M7 17L17 7M8 7h9v9"/>',
     up: '<path d="M12 19V5M5 12l7-7 7 7"/>',
     plus: '<path d="M12 5v14M5 12h14"/>',
+    mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+    pin: '<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
   };
   const icon = (n) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]}</svg>`;
 
@@ -221,7 +231,7 @@
         <${headingTag} id="h-team" style="font-size:var(--step-3);margin-top:8px">The people <em>behind every message.</em></${headingTag}>
         <p class="lede">A small team of strategists and creatives who plan, shoot, design and publish for the brands we serve.</p>
         <div class="team-grid">${team.map((m) => `
-          <div class="member"><img src="${MEDIA + m.img}" alt="Portrait of ${esc(m.name)}"><h3>${esc(m.name)}</h3><p>${esc(m.role)}</p></div>`).join("")}
+          <a class="member" href="#team/${m.slug}"><img src="${MEDIA + m.img}" alt="Portrait of ${esc(m.name)}"><h3>${esc(m.name)}</h3><p>${esc(m.role)}</p><span class="member-more">View profile →</span></a>`).join("")}
         </div>
       </div>
     </section>`;
@@ -403,7 +413,7 @@
           <h1>Power in <em>every message.</em></h1>
           <p class="lede">Torah Nexus is the media and communication company of Torah Holdings, based in Asokoro, Abuja. We help brands tell their story through film, design, digital marketing, PR and events, and we develop the talent who bring those stories to life.</p>
         </div>
-        <img src="${MEDIA}logo-lockup.jpg" alt="Torah Nexus logo: Power in Every Message" style="border-radius:20px;width:100%">
+        <img src="${MEDIA}logo-lockup.jpg" alt="Torah Nexus logo: Power in Every Message" style="border-radius:20px;width:100%;max-width:440px;justify-self:center">
       </section>
       ${teamBand("h2")}
       <section class="wrap" aria-labelledby="h-brands2">
@@ -522,12 +532,49 @@
     last.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
   }
 
+  function viewMember(m) {
+    const others = team.filter((o) => o !== m);
+    const row = (ic, html) => `<li class="pf-row">${icon(ic)}<span>${html}</span></li>`;
+    return `
+    <section class="profile on-dark" aria-labelledby="h-profile">
+      <div class="wrap profile-grid">
+        <figure class="profile-photo${m.photo ? "" : " id-crop"}"><img src="${MEDIA + (m.photo || m.img)}" alt="Portrait of ${esc(m.name)}"></figure>
+        <div class="profile-body">
+          <a class="profile-back" href="#about">← The team</a>
+          <span class="profile-tag">◆ ${esc(m.role)} · Torah Nexus</span>
+          <h1 id="h-profile">${esc(m.first)} <em>${esc(m.last)}</em></h1>
+          <p class="profile-bio">${esc(m.bio)}</p>
+          <div class="profile-focus">${m.focus.map((f) => `<span>${esc(f)}</span>`).join("")}</div>
+          <ul class="profile-contact">
+            ${row("phone", `<a href="tel:+2349067102801">+234 (0)906 710 2801</a>`)}
+            ${row("phone", `<a href="tel:+2349133799396">+234 (0)913 379 9396</a>`)}
+            ${m.email ? row("mail", `<a href="mailto:${esc(m.email)}">${esc(m.email)}</a>`) : ""}
+            ${row("ig", `<a href="https://www.instagram.com/${m.ig}/" target="_blank" rel="noopener">@${esc(m.ig)}</a>`)}
+            ${row("pin", "Cluster B, Admiralty Estate, Asokoro, Abuja")}
+          </ul>
+          <div class="profile-actions">
+            <a class="btn btn-gold" href="#contact">Start a project</a>
+            <a class="btn btn-line" href="#work">See our work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="wrap profile-others" aria-labelledby="h-others">
+      <span class="eyebrow">Also on the team</span>
+      <h2 id="h-others" style="margin-top:8px">Meet the <em>rest of the team.</em></h2>
+      <div class="others-grid">${others.map((o) => `
+        <a class="other" href="#team/${o.slug}"><img src="${MEDIA + o.img}" alt="Portrait of ${esc(o.name)}"><span><strong>${esc(o.name)}</strong><small>${esc(o.role)}</small></span><span class="other-arrow" aria-hidden="true">→</span></a>`).join("")}
+      </div>
+    </section>`;
+  }
+
   const ROUTES = { home: viewHome, work: viewWork, talent: viewTalent, services: viewServices, about: viewAbout, articles: viewArticles, contact: viewContact, ask: viewAsk };
   const TITLES = { home: "Torah Nexus", work: "Our Work · Torah Nexus", talent: "Our Talent · Torah Nexus", services: "Services · Torah Nexus", about: "About · Torah Nexus", articles: "Articles · Torah Nexus", contact: "Contact · Torah Nexus", ask: "Ask Nexus · Torah Nexus" };
-  const route = () => { const h = location.hash.slice(1); return ROUTES[h] ? h : "home"; };
+  const member = () => { const m = location.hash.match(/^#team\/([a-z-]+)$/); return m && team.find((t) => t.slug === m[1]); };
+  const route = () => { const h = location.hash.slice(1); return ROUTES[h] ? h : member() ? "member" : "home"; };
 
   // Gentle fade-up as sections scroll into view
-  const REVEAL = ".page-title, .intro, .section-head, .stats, .feature, .client-case, .service, .process li, .talent, .team-band, .brand, .card-article, .stills figure, .cta-band, .info-card, .contact-form, .ask-strip";
+  const REVEAL = ".page-title, .intro, .section-head, .stats, .feature, .client-case, .service, .process li, .talent, .team-band, .brand, .card-article, .stills figure, .cta-band, .info-card, .contact-form, .ask-strip, .profile-others";
   let io, pendingAsk = null;
   // Count a number up from zero when it scrolls into view
   function countUp(el) {
@@ -583,13 +630,13 @@
 
   function render() {
     const r = route();
-    const html = ROUTES[r]().replace(/<img (?![^>]*hero-poster)/g, '<img loading="lazy" decoding="async" ');
+    const html = (r === "member" ? viewMember(member()) : ROUTES[r]()).replace(/<img (?![^>]*hero-poster)/g, '<img loading="lazy" decoding="async" ');
     $("#main").innerHTML = `<div class="view">${html}</div>`;
     $("#main").classList.remove("page-out");
     reveal();
     if (r === "ask" && pendingAsk) { const id = pendingAsk; pendingAsk = null; setTimeout(() => askAnswer(faq.find((f) => f.id === id)), 60); }
     $$(".nav a").forEach((a) => (a.getAttribute("href") === "#" + r ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current")));
-    document.title = TITLES[r];
+    document.title = r === "member" ? `${member().name} · Torah Nexus` : TITLES[r];
     $("#menu-panel").hidden = true;
     $(".menu-btn").setAttribute("aria-expanded", "false");
     $$(".menu-links a").forEach((a) => (a.getAttribute("href") === "#" + r ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current")));
