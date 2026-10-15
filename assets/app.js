@@ -357,11 +357,16 @@
       ${featuredWork()}
       <section class="wrap" aria-labelledby="h-client">
         <div class="client-case">
-          <figure class="client-photo"><img src="${MEDIA}client-adakole.jpg" alt="Adakole Ijogi in a still from his campaign video, captioned PDP candidate FCT senate 2027"></figure>
+          <figure class="client-photo client-video">
+            <video controls playsinline preload="none" poster="${MEDIA}adakole-documentary-poster.jpg" aria-label="Documentary: Adakole Ijogi on his plans for the FCT">
+              <source src="${MEDIA}adakole-documentary.mp4" type="video/mp4">
+            </video>
+            <figcaption>Documentary · Produced by Torah Nexus</figcaption>
+          </figure>
           <div class="client-copy">
             <span class="eyebrow">Client spotlight · Political campaign</span>
             <h2 id="h-client">Adakole Ijogi. <em>A campaign, told on film.</em></h2>
-            <p class="lede">Adakole Ijogi is the PDP candidate for the FCT Senate seat in the 2027 election. Torah Nexus branded his campaign movement and made the documentary in which he speaks directly to the people of the FCT about his plans.</p>
+            <p class="lede">Adakole Ijogi is the PDP candidate for the FCT Senate seat in the 2027 election. A political economist and development expert, he also works in IT and big data analytics, and describes himself as a researcher, an artist and a believer in a renaissance for Black Africa. Torah Nexus branded his campaign movement and made the documentary in which he speaks directly to the people of the FCT about his plans.</p>
             <ul class="client-list">
               <li><b>Campaign branding</b><span>A consistent look for the movement across video and social media.</span></li>
               <li><b>Campaign video</b><span>Filmed and produced by Torah Nexus.</span></li>

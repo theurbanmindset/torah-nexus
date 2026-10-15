@@ -187,7 +187,8 @@ main { padding-bottom: 72px; }
 /* Client spotlight */
 .client-case { display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr); gap: clamp(24px, 5vw, 72px); align-items: center; }
 .client-photo { margin: 0; border-radius: 18px; overflow: hidden; background: #000; max-width: 400px; width: 100%; justify-self: center; box-shadow: 0 24px 60px rgba(29,12,16,0.18); }
-.client-photo img { width: 100%; aspect-ratio: 720 / 1279; object-fit: cover; }
+.client-photo img, .client-photo video { display: block; width: 100%; aspect-ratio: 720 / 1279; object-fit: cover; background: #000; }
+.client-video figcaption { padding: 10px 14px; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.8); background: #1d0c10; }
 .client-copy { display: grid; gap: 18px; justify-items: start; }
 .client-copy h2 { font-size: var(--step-3); }
 .client-list { list-style: none; margin: 0; padding: 0; display: grid; width: 100%; }
