@@ -54,6 +54,12 @@
   // Team profiles (#team/<slug>). Bios come from each person's Instagram (shared by the owner 2026-10-14).
   // `photo` shows on the profile page only; `img` stays as the round photo in the team section.
   const team = [
+    { slug: "sussana", name: "Sussana Igboanugo", first: "Sussana", last: "Igboanugo", role: "Media & Communications Specialist", img: "team-sussana.jpg", photo: "profile-sussana.jpg",
+      bio: "I am a media and communications specialist with Torah Nexus. I tell stories on camera and online, from faith and lifestyle to fashion and food, and I also plan events. I help the brands we serve speak clearly and show up well wherever people are watching.",
+      focus: ["Media & communications", "Storytelling", "Lifestyle content", "Event planning"], ig: "the_sussana" },
+    { slug: "sharon", name: "Sharon Nurudeen", first: "Sharon", last: "Nurudeen", role: "Digital Creator", img: "team-sharon.jpg", photo: "profile-sharon.jpg",
+      bio: "I am a digital and content creator with Torah Nexus. I write, film and share content across fashion and lifestyle, turning everyday moments into stories that people want to follow, and I bring that same eye to the brands we serve.",
+      focus: ["Digital creator", "Content creator", "Writer", "Fashion & lifestyle"], ig: "therealsharonnurudeen_" },
     { slug: "naza", name: "Anozie Naza", first: "Anozie", last: "Naza", role: "Media & Creative Officer", img: "team-naza.jpg", photo: "profile-naza.jpg",
       bio: "I am a media and communications professional working across Torah Nexus and Torah Homz, the group's real estate brand in Abuja. I plan, shoot and share the stories behind our brands, from site visits to customer events, so people can see the work and the people behind it.",
       focus: ["Media & communications", "Real estate content", "Social media"], ig: "naza__anozie" },
@@ -140,7 +146,7 @@
       a: ["Torah Nexus is the media and communication company of Torah Holdings.", "The group also includes Torah Homz (real estate), Torah Signature (hospitality), Simcha Innovations (construction), Torah Switch (financial solutions) and Twoscrove Innovation (renewable energy)."],
       link: ["#about", "About Torah Nexus"], rel: ["what", "team"] },
     { id: "team", q: "Who is on the team?", k: ["team", "staff", "people", "crew", "manager", "officer", "who works"],
-      a: ["The people behind every message include Anozie Naza, Media & Creative Officer. You can meet the team on the About page."],
+      a: ["The people behind every message include Sussana Igboanugo, Media & Communications Specialist; Sharon Nurudeen, Digital Creator; and Anozie Naza, Media & Creative Officer. You can meet the team on the About page."],
       link: ["#about", "Meet the team"], rel: ["contact", "what"] },
     { id: "contact", q: "Where are you and how do I reach you?", k: ["where", "address", "location", "office", "visit", "contact", "phone", "call", "number", "reach", "whatsapp", "email"],
       a: ["We’re at Cluster B, Block A, House 5, Navy Admiralty Estate, Asokoro, Abuja.", "Call +234 906 710 2801 or +234 913 379 9396, or use the Contact page, which also has WhatsApp."],
