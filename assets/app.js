@@ -54,15 +54,9 @@
   // Team profiles (#team/<slug>). Bios come from each person's Instagram (shared by the owner 2026-10-14).
   // `photo` shows on the profile page only; `img` stays as the round photo in the team section.
   const team = [
-    { slug: "celine", name: "Obiabo Celine", first: "Obiabo", last: "Celine", role: "Business Development Manager", img: "team-celine.jpg", photo: "profile-celine.jpg",
-      bio: "I help brands, businesses and public figures find the right way to tell their story. My background runs across media production, event coverage, sales and Nollywood makeup, so I know what it takes to make people look and sound their best on camera. From the first conversation to the final plan, I make sure every project with Torah Nexus starts with clear goals.",
-      focus: ["Client partnerships", "Media production", "Event coverage"], ig: "celines_integrated_resources" },
     { slug: "naza", name: "Anozie Naza", first: "Anozie", last: "Naza", role: "Media & Creative Officer", img: "team-naza.jpg", photo: "profile-naza.jpg",
       bio: "I am a media and communications professional working across Torah Nexus and Torah Homz, the group's real estate brand in Abuja. I plan, shoot and share the stories behind our brands, from site visits to customer events, so people can see the work and the people behind it.",
       focus: ["Media & communications", "Real estate content", "Social media"], ig: "naza__anozie" },
-    { slug: "christian", name: "Ekre Christian", first: "Ekre", last: "Christian", role: "Media & Creative Officer", img: "team-christian.jpg", photo: "profile-christian.jpg",
-      bio: "I am an actor, producer and filmmaker. At Torah Nexus I bring that experience in front of and behind the camera to our commercials and campaigns, and I also serve as Sales and Marketing Executive for Torah Homz, the group's real estate brand.",
-      focus: ["Film production", "Acting", "Sales & marketing"], ig: "chrisjohnsonekre", email: "Krisara.ao@gmail.com" },
   ];
 
   const brands = [
@@ -74,14 +68,14 @@
   ];
 
   const articles = [
-    { id: "story-not-ad", nexus: true, title: "Why Your Brand Needs a Story, Not Just an Ad", author: "Obiabo Celine", read: 2, img: "still-family.jpg",
+    { id: "story-not-ad", nexus: true, title: "Why Your Brand Needs a Story, Not Just an Ad", author: "Torah Nexus Team", read: 2, img: "still-family.jpg",
       excerpt: "People forget slogans. They remember how a story made them feel. Here is how we build commercials around a single human moment.",
       body: [
         "Most adverts list features. The ones people remember show a moment: a family at dinner, a key handed over, a child laughing at the table.",
         "When we plan a commercial, we start with one question. What should the viewer feel in the last five seconds? Everything else in the script works toward that feeling.",
         "> Power in every message starts with knowing which message matters most.",
       ] },
-    { id: "behind-the-scenes", nexus: true, title: "Behind the Scenes: Filming Across Six Brands in One Commercial", author: "Ekre Christian", read: 2, img: "still-nexus.jpg",
+    { id: "behind-the-scenes", nexus: true, title: "Behind the Scenes: Filming Across Six Brands in One Commercial", author: "Torah Nexus Team", read: 2, img: "still-nexus.jpg",
       excerpt: "One film, six companies and a single story. A look at how a group commercial is planned so every brand gets its moment.",
       body: [
         "A group commercial has a hard job. It has to introduce several businesses without feeling like a list.",
@@ -146,7 +140,7 @@
       a: ["Torah Nexus is the media and communication company of Torah Holdings.", "The group also includes Torah Homz (real estate), Torah Signature (hospitality), Simcha Innovations (construction), Torah Switch (financial solutions) and Twoscrove Innovation (renewable energy)."],
       link: ["#about", "About Torah Nexus"], rel: ["what", "team"] },
     { id: "team", q: "Who is on the team?", k: ["team", "staff", "people", "crew", "manager", "officer", "who works"],
-      a: ["The people behind every message include Obiabo Celine, Business Development Manager, and Anozie Naza and Ekre Christian, Media & Creative Officers."],
+      a: ["The people behind every message include Anozie Naza, Media & Creative Officer. You can meet the team on the About page."],
       link: ["#about", "Meet the team"], rel: ["contact", "what"] },
     { id: "contact", q: "Where are you and how do I reach you?", k: ["where", "address", "location", "office", "visit", "contact", "phone", "call", "number", "reach", "whatsapp", "email"],
       a: ["We’re at Cluster B, Block A, House 5, Navy Admiralty Estate, Asokoro, Abuja.", "Call +234 906 710 2801 or +234 913 379 9396, or use the Contact page, which also has WhatsApp."],
@@ -226,7 +220,7 @@
 
   const teamBand = (headingTag = "h2") => `
     <section class="wrap" aria-labelledby="h-team">
-      <div class="team-band on-dark">
+      <div class="team-band">
         <span class="eyebrow">The team</span>
         <${headingTag} id="h-team" style="font-size:var(--step-3);margin-top:8px">The people <em>behind every message.</em></${headingTag}>
         <p class="lede">A small team of strategists and creatives who plan, shoot, design and publish for the brands we serve.</p>
@@ -253,7 +247,7 @@
 
   const ctaBand = () => `
     <section class="wrap">
-      <div class="cta-band on-dark">
+      <div class="cta-band">
         <div><span class="eyebrow">Let's build your presence</span><h2 style="margin-top:8px">Have a brand, a launch <em>or a story to tell?</em></h2><p>Tell us what you need. We'll come back with a plan, a timeline and a clear price.</p></div>
         <a class="btn btn-gold" href="#contact">Start a project</a>
       </div>
@@ -418,7 +412,7 @@
           <h1>Power in <em>every message.</em></h1>
           <p class="lede">Torah Nexus is the media and communication company of Torah Holdings, based in Asokoro, Abuja. We help brands tell their story through film, design, digital marketing, PR and events, and we develop the talent who bring those stories to life.</p>
         </div>
-        <img src="${MEDIA}logo-lockup.jpg" alt="Torah Nexus logo: Power in Every Message" style="border-radius:20px;width:100%;max-width:440px;justify-self:center">
+        <img src="${MEDIA}logo-lockup-light.jpg" alt="Torah Nexus logo: A subsidiary of Torah Holdings Group" style="border-radius:20px;border:1px solid var(--line);width:100%;max-width:440px;justify-self:center">
       </section>
       ${teamBand("h2")}
       <section class="wrap" aria-labelledby="h-brands2">
@@ -528,7 +522,7 @@
     log.insertAdjacentHTML("beforeend", `
       <div class="ask-turn">
         <p class="ask-q">${esc(q)}</p>
-        <div class="ask-a"><span class="ask-who"><img src="${MEDIA}logo-mark-128.png" alt="">Torah Nexus</span>${body}
+        <div class="ask-a"><span class="ask-who"><img src="${MEDIA}nexus-mark-240.png" alt="">Torah Nexus</span>${body}
           ${rel.length ? `<div class="ask-rel"><span class="meta">You might also ask</span>${rel.map((r) => `<button class="ask-pill small" type="button" data-ask="${r.id}">${esc(r.q)}${icon("upright")}</button>`).join("")}</div>` : ""}
         </div>
       </div>`);
@@ -541,7 +535,7 @@
     const others = team.filter((o) => o !== m);
     const row = (ic, html) => `<li class="pf-row">${icon(ic)}<span>${html}</span></li>`;
     return `
-    <section class="profile on-dark" aria-labelledby="h-profile">
+    <section class="profile" aria-labelledby="h-profile">
       <div class="wrap profile-grid">
         <figure class="profile-photo${m.photo ? "" : " id-crop"}"><img src="${MEDIA + (m.photo || m.img)}" alt="Portrait of ${esc(m.name)}"></figure>
         <div class="profile-body">
@@ -564,13 +558,13 @@
         </div>
       </div>
     </section>
-    <section class="wrap profile-others" aria-labelledby="h-others">
+    ${others.length ? `    <section class="wrap profile-others" aria-labelledby="h-others">
       <span class="eyebrow">Also on the team</span>
       <h2 id="h-others" style="margin-top:8px">Meet the <em>rest of the team.</em></h2>
       <div class="others-grid">${others.map((o) => `
         <a class="other" href="#team/${o.slug}"><img src="${MEDIA + o.img}" alt="Portrait of ${esc(o.name)}"><span><strong>${esc(o.name)}</strong><small>${esc(o.role)}</small></span><span class="other-arrow" aria-hidden="true">→</span></a>`).join("")}
       </div>
-    </section>`;
+    </section>` : ""}`;
   }
 
   const ROUTES = { home: viewHome, work: viewWork, talent: viewTalent, services: viewServices, about: viewAbout, articles: viewArticles, contact: viewContact, ask: viewAsk };
