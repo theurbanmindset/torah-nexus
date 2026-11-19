@@ -55,7 +55,7 @@
   // `photo` shows on the profile page only; `img` stays as the round photo in the team section.
   const team = [
     { slug: "sussana", name: "Sussana Igboanugo", first: "Sussana", last: "Igboanugo", role: "Marketing & Communications Manager", img: "team-sussana.jpg", photo: "profile-sussana.jpg",
-      bio: "A marketing and communications manager with Torah Nexus, telling stories on camera and online, from faith and lifestyle to fashion and food, and planning events too. Helps the brands we serve speak clearly and show up well wherever people are watching.",
+      bio: "A marketing and communications manager with Torah Holdings, telling stories on camera and online, from faith and lifestyle to fashion and food, and planning events too. Helps the brands we serve speak clearly and show up well wherever people are watching.",
       focus: ["Media & communications", "Storytelling", "Lifestyle content", "Event planning"], ig: "the_sussana" },
     { slug: "sharon", name: "Sharon Nurudeen", first: "Sharon", last: "Nurudeen", role: "Digital Creator", img: "team-sharon.jpg", photo: "profile-sharon.jpg",
       bio: "A digital and content creator with Torah Nexus, writing, filming and sharing content across fashion and lifestyle. Turns everyday moments into stories people want to follow, and brings that same eye to the brands we serve.",

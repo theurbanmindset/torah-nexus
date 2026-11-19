@@ -506,3 +506,13 @@ a.member:hover, a.member:focus-visible { background: color-mix(in srgb, var(--cr
 .logo-text b em, .logo-text b span, .site-footer .logo-text b em, .site-footer .logo-text b span { color: #5e1680; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo-text b em, :root:not([data-theme="light"]) .logo-text b span { color: #e9bd62; } }
 :root[data-theme="dark"] .logo-text b em, :root[data-theme="dark"] .logo-text b span { color: #e9bd62; }
+
+/* Header/footer wordmark: the "Torah Nexus" lettering from the logo itself (2026-11-19) */
+.logo-text b.wordmark { display: block; line-height: 0; }
+.logo .logo-text b.wordmark img { height: 21px; width: auto; display: block; }
+.logo .word-light { display: none !important; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo .word-dark { display: none !important; } :root:not([data-theme="light"]) .logo .word-light { display: block !important; } }
+:root[data-theme="dark"] .logo .word-dark { display: none !important; }
+:root[data-theme="dark"] .logo .word-light { display: block !important; }
+.logo-text small { margin-top: 6px; }
+@media (max-width: 480px) { .site-header .logo .logo-text b.wordmark img { height: 17px; } }
