@@ -39,30 +39,19 @@
     { icon: "crown", title: "Brand Management", text: "Keeping your brand consistent and strong across every channel, month after month." },
   ];
 
-  const talent = [
-    { name: "Igwe Chikaodili Franka", role: "Actor", img: "talent-franka.jpg", ig: "franka_igwe_",
-      bio: "A screen actor whose work spans Nigerian feature films and drama.",
-      credits: ["Hold Me, Let Me Go", "To Adaego with Love", "The Truth About Us"] },
-    { name: "Chinedu Idigo", role: "Actor · Presenter", img: "talent-chinedu.jpg", ig: "eduhandsome",
-      bio: "Actor, presenter, podcaster and model. He runs The Oyagist Me podcast and designs for Edufab Signature.",
-      credits: ["Mr Universe Nigeria: Mr Congeniality", "The Oyagist Me podcast", "Edufab Signature"] },
-    { name: "Preach Bassey", role: "Actor", img: "talent-preach.jpg", ig: "preachbassey",
-      bio: "A film actor whose recent work includes the feature film A Land Apart.",
-      credits: ["A Land Apart (as Bakare)"] },
-  ];
 
   // Team profiles (#team/<slug>). Bios come from each person's Instagram (shared by the owner 2026-10-14).
   // `photo` shows on the profile page only; `img` stays as the round photo in the team section.
   const team = [
     { slug: "sussana", name: "Sussana Igboanugo", first: "Sussana", last: "Igboanugo", role: "Marketing & Communications Manager", img: "team-sussana.jpg", photo: "profile-sussana.jpg",
-      bio: "A marketing and communications manager with Torah Holdings, telling stories on camera and online, from faith and lifestyle to fashion and food, and planning events too. Helps the brands we serve speak clearly and show up well wherever people are watching.",
-      focus: ["Media & communications", "Storytelling", "Lifestyle content", "Event planning"], ig: "the_sussana" },
-    { slug: "sharon", name: "Sharon Nurudeen", first: "Sharon", last: "Nurudeen", role: "Digital Creator", img: "team-sharon.jpg", photo: "profile-sharon.jpg",
-      bio: "A digital and content creator with Torah Nexus, writing, filming and sharing content across fashion and lifestyle. Turns everyday moments into stories people want to follow, and brings that same eye to the brands we serve.",
-      focus: ["Digital creator", "Content creator", "Writer", "Fashion & lifestyle"], ig: "therealsharonnurudeen_" },
-    { slug: "naza", name: "Anozie Naza", first: "Anozie", last: "Naza", role: "Media & Creative Officer", img: "team-naza.jpg", photo: "profile-naza.jpg",
-      bio: "A media and communications professional working across Torah Nexus and Torah Homz, the group's real estate brand in Abuja. Plans, shoots and shares the stories behind our brands, from site visits to customer events, so people can see the work and the people behind it.",
-      focus: ["Media & communications", "Real estate content", "Social media"], ig: "naza__anozie" },
+      bio: "A media, marketing and communications professional with a strong passion for storytelling, brand development and strategic communication. She combines creativity with practical execution, helping brands communicate clearly, build meaningful connections with their audiences and create experiences that strengthen visibility and trust. Her experience spans content strategy, media production, public relations, brand communication, event management and digital storytelling, with a focus on turning ideas into compelling stories that people can understand, connect with and remember.",
+      focus: ["Content strategy", "Media production", "Public relations", "Brand communication", "Event management", "Digital storytelling"], ig: "the_sussana" },
+    { slug: "sharon", name: "Sharon Nurudeen", first: "Sharon", last: "Nurudeen", role: "Social Media Assistant & Content Creator", img: "team-sharon.jpg", photo: "profile-sharon.jpg",
+      bio: "A social media assistant and content creator with Torah Nexus, writing, filming and sharing content across fashion and lifestyle. Turns everyday moments into stories people want to follow, and brings that same eye to the brands we serve.",
+      focus: ["Social media", "Content creator", "Writer", "Fashion & lifestyle"], ig: "therealsharonnurudeen_" },
+    { slug: "segun", name: "Faleye Oluwasegun Emmanuel", first: "Faleye", last: "Oluwasegun Emmanuel", role: "Graphic Designer, Photographer & Visual Storyteller", img: "team-segun.jpg", photo: "profile-segun.jpg",
+      bio: "A creative professional skilled in visual branding, photography, creative direction, photo editing and motion graphics, with a passion for turning ideas into impactful visual experiences.",
+      focus: ["Visual branding", "Photography", "Creative direction", "Photo editing", "Motion graphics"] },
   ];
 
   const brands = [
@@ -88,7 +77,7 @@
         "The answer is a thread that runs through every scene. Each brand appears where it fits naturally in that story.",
         "> Every brand gets its moment, and every moment serves the story.",
       ] },
-    { id: "content-people-cant-ignore", nexus: true, title: "Five Ways to Make Content People Can't Ignore", author: "Anozie Naza", read: 2, img: "still-signature.jpg",
+    { id: "content-people-cant-ignore", nexus: true, title: "Five Ways to Make Content People Can't Ignore", author: "Torah Nexus Team", read: 2, img: "still-signature.jpg",
       excerpt: "Designed with strategy, served with impact. Practical habits for social content that stops the scroll.",
       body: [
         "Open with the most interesting frame. You have about a second before someone scrolls past.",
@@ -105,16 +94,13 @@
       link: ["#services", "See all ten services"], rel: ["commercial", "start", "holdings"] },
     { id: "commercial", q: "Can you film our commercial?", k: ["film", "commercial", "video", "advert", "ad", "shoot", "documentary", "production", "drone", "brand film"],
       a: ["Yes. Media production is at the heart of what we do: commercials, brand films, documentaries and short-form video, from script to final cut.", "Our latest is the Torah Holdings group commercial, filmed in Abuja with drone cinematography, editing and captions by Torah Nexus."],
-      link: ["#work", "Watch our work"], rel: ["start", "cost", "talent"] },
+      link: ["#work", "Watch our work"], rel: ["start", "cost", "events"] },
     { id: "social", q: "Can you manage our social media?", k: ["social", "media", "instagram", "tiktok", "facebook", "linkedin", "posting", "content", "marketing", "digital", "manage"],
       a: ["Yes. We handle digital marketing and social media: content calendars, posting and community management across Instagram, Facebook, TikTok and LinkedIn.", "We also create the content itself, from short videos to designed posts, so your pages look like one brand."],
       link: ["#services", "See our services"], rel: ["branding", "strategy", "start"] },
     { id: "events", q: "Do you cover events?", k: ["event", "events", "cover", "coverage", "launch", "conference", "wedding", "celebration", "photography", "photo", "live"],
       a: ["Yes. Event media and coverage includes photography, video and live coverage for launches, conferences and celebrations."],
       link: ["#contact", "Tell us about your event"], rel: ["social", "cost", "start"] },
-    { id: "talent", q: "Can I book your talent?", k: ["talent", "book", "franka", "chinedu", "preach", "bassey", "igwe", "idigo", "actor", "actress", "presenter", "model", "cast", "host", "ambassador"],
-      a: ["Yes. Torah Nexus has signed talent for commercials, campaigns and film, including Igwe Chikaodili Franka, Chinedu Idigo and Preach Bassey.", "On the Contact page, choose “Book our talent” and tell us about the project."],
-      link: ["#talent", "Meet our talent"], rel: ["commercial", "cost", "start"] },
     { id: "start", q: "How do we start a project?", k: ["start", "begin", "process", "how", "work", "brief", "steps", "hire", "next"],
       a: ["You don’t need a finished brief. Tell us what you want to achieve and we take it from there in four steps.", "Listen: we learn your goal, audience and budget. Plan: a clear concept, schedule and price, agreed before we start. Create: scripting, filming, design and editing, with your review at each stage. Launch: delivered in every format you need and promoted where your audience is."],
       link: ["#contact", "Start a project"], rel: ["cost", "time", "contact"] },
@@ -146,13 +132,13 @@
       a: ["Torah Nexus is the media and communication company of Torah Holdings.", "The group also includes Torah Homz (real estate), Torah Signature (hospitality), Simcha Innovations (construction), Torah Switch (financial solutions) and Twoscrove Innovation (renewable energy)."],
       link: ["#about", "About Torah Nexus"], rel: ["what", "team"] },
     { id: "team", q: "Who is on the team?", k: ["team", "staff", "people", "crew", "manager", "officer", "who works"],
-      a: ["The people behind every message include Sussana Igboanugo, Marketing & Communications Manager; Sharon Nurudeen, Digital Creator; and Anozie Naza, Media & Creative Officer. You can meet the team on the About page."],
+      a: ["The people behind every message include Sussana Igboanugo, Marketing & Communications Manager; Sharon Nurudeen, Social Media Assistant & Content Creator; and Faleye Oluwasegun Emmanuel, Graphic Designer, Photographer & Visual Storyteller. You can meet the team on the About page."],
       link: ["#about", "Meet the team"], rel: ["contact", "what"] },
     { id: "contact", q: "Where are you and how do I reach you?", k: ["where", "address", "location", "office", "visit", "contact", "phone", "call", "number", "reach", "whatsapp", "email"],
       a: ["We’re at Cluster B, Block A, House 5, Navy Admiralty Estate, Asokoro, Abuja.", "Call +234 906 710 2801 or +234 913 379 9396, or use the Contact page, which also has WhatsApp."],
       link: ["#contact", "Go to Contact"], rel: ["start", "cost"] },
   ];
-  const ASK_STARTERS = ["what", "commercial", "social", "events", "talent", "start"];
+  const ASK_STARTERS = ["what", "commercial", "social", "events", "start"];
 
   const ICONS = {
     film: '<path d="M4 5h16v14H4z"/><path d="M8 5v14M16 5v14M4 9h4M4 15h4M16 9h4M16 15h4"/>',
@@ -215,14 +201,6 @@
 
   const serviceCard = (s) => `<div class="service">${icon(s.icon)}<h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div>`;
 
-  const talentCard = (p) => `
-    <article class="talent">
-      <div class="talent-photo"><img src="${MEDIA + p.img}" alt="Portrait of ${esc(p.name)}"><span class="role">${esc(p.role)}</span></div>
-      <h3>${esc(p.name)}</h3>
-      <p>${esc(p.bio)}</p>
-      <div class="credits">${p.credits.map((c) => `<span>${esc(c)}</span>`).join("")}</div>
-      <a class="ig-link" href="https://www.instagram.com/${p.ig}/" target="_blank" rel="noopener">${icon("ig")}@${esc(p.ig)}</a>
-    </article>`;
 
   const teamBand = (headingTag = "h2") => `
     <section class="wrap" aria-labelledby="h-team">
@@ -260,6 +238,47 @@
     </section>`;
 
   // ---------- Views ----------
+  const clientSpotlight = (onHome = false) => onHome ? `
+      <section class="wrap" aria-labelledby="h-client-home">
+        <div class="client-case">
+          <figure class="client-photo client-video">
+            <video controls playsinline preload="none" poster="${MEDIA}adakole-documentary-poster.jpg" aria-label="Documentary: Adakole Ijogi on his plans for the FCT">
+              <source src="${MEDIA}adakole-documentary.mp4" type="video/mp4">
+            </video>
+            <figcaption>Documentary · Produced by Torah Nexus</figcaption>
+          </figure>
+          <div class="client-copy">
+            <span class="eyebrow">Client spotlight · Political campaign</span>
+            <h2 id="h-client-home">Adakole Ijogi. <em>A campaign, told on film.</em></h2>
+            <p class="lede">For the PDP candidate for the FCT Senate seat in 2027, Torah Nexus branded the campaign movement, filmed the campaign video and made this documentary, in which he speaks directly to the people of the FCT about his plans.</p>
+            <a class="link-more" href="#work">See the full story in Our Work →</a>
+          </div>
+        </div>
+      </section>
+` : `
+      <section class="wrap" aria-labelledby="h-client">
+        <div class="client-case">
+          <figure class="client-photo client-video">
+            <video controls playsinline preload="none" poster="${MEDIA}adakole-documentary-poster.jpg" aria-label="Documentary: Adakole Ijogi on his plans for the FCT">
+              <source src="${MEDIA}adakole-documentary.mp4" type="video/mp4">
+            </video>
+            <figcaption>Documentary · Produced by Torah Nexus</figcaption>
+          </figure>
+          <div class="client-copy">
+            <span class="eyebrow">Client spotlight · Political campaign</span>
+            <h2 id="h-client">Adakole Ijogi. <em>A campaign, told on film.</em></h2>
+            <p class="lede">Adakole Ijogi is the PDP candidate for the FCT Senate seat in the 2027 election. A political economist and development expert, he also works in IT and big data analytics, and describes himself as a researcher, an artist and a believer in a renaissance for Black Africa. Torah Nexus branded his campaign movement and made the documentary in which he speaks directly to the people of the FCT about his plans.</p>
+            <ul class="client-list">
+              <li><b>Campaign branding</b><span>A consistent look for the movement across video and social media.</span></li>
+              <li><b>Campaign video</b><span>Filmed and produced by Torah Nexus.</span></li>
+              <li><b>Documentary</b><span>His story and his plans for the FCT, in his own words.</span></li>
+            </ul>
+            <a class="link-more" href="${IG.adakole}" target="_blank" rel="noopener">See the campaign on Instagram →</a>
+          </div>
+        </div>
+      </section>
+`;
+
   function viewHome() {
     const ticker = services.map((s) => `<span>${esc(s.title)}</span>`).join("");
     return `
@@ -281,17 +300,19 @@
       <div class="wrap"><div class="stats">
         <div><b data-count="10">10</b><span>services under one roof</span></div>
         <div><b data-count="6">6</b><span>brands told in one commercial</span></div>
-        <div><b data-count="3">3</b><span>signed talent and growing</span></div>
+        <div><b data-count="3">3</b><span>creatives on the team</span></div>
         <div><b>Abuja</b><span>Asokoro, our home base</span></div>
       </div></div>
       </div>
 
       ${featuredWork()}
 
+      ${clientSpotlight(true)}
+
       <section class="wrap intro" aria-labelledby="h-intro">
         <span class="eyebrow">The house of Torah Nexus</span>
         <h2 id="h-intro">One house. <em>Every way to be heard.</em></h2>
-        <p class="lede">Film, design, campaigns and talent, made under one roof in Abuja. Whatever your message is, we find the best way to tell it and the right place for people to see it.</p>
+        <p class="lede">Film, design, campaigns and events, made under one roof in Abuja. Whatever your message is, we find the best way to tell it and the right place for people to see it.</p>
         <div class="intro-links"><a class="link-more" href="#work">See our work →</a><a class="link-more" href="#services">Find your way in →</a></div>
       </section>
 
@@ -311,14 +332,6 @@
           <li><b>Create</b><p>Scripting, filming, design and editing, with your review at each stage.</p></li>
           <li><b>Launch</b><p>Delivered in every format you need, then promoted where your audience is.</p></li>
         </ol>
-      </section>
-
-      <section class="wrap" aria-labelledby="h-talent">
-        <div class="section-head">
-          <div><span class="eyebrow">Our talent</span><h2 id="h-talent" style="margin-top:8px">Faces signed <em>to Torah Nexus.</em></h2></div>
-          <a class="link-more" href="#talent">Meet our talent →</a>
-        </div>
-        <div class="talent-grid">${talent.map(talentCard).join("")}</div>
       </section>
 
       ${teamBand()}
@@ -355,46 +368,15 @@
         <p class="lede">Commercials, brand films and campaign content. Start with our latest commercial, then follow us on Instagram for new reels every week.</p>
       </section>
       ${featuredWork()}
-      <section class="wrap" aria-labelledby="h-client">
-        <div class="client-case">
-          <figure class="client-photo client-video">
-            <video controls playsinline preload="none" poster="${MEDIA}adakole-documentary-poster.jpg" aria-label="Documentary: Adakole Ijogi on his plans for the FCT">
-              <source src="${MEDIA}adakole-documentary.mp4" type="video/mp4">
-            </video>
-            <figcaption>Documentary · Produced by Torah Nexus</figcaption>
-          </figure>
-          <div class="client-copy">
-            <span class="eyebrow">Client spotlight · Political campaign</span>
-            <h2 id="h-client">Adakole Ijogi. <em>A campaign, told on film.</em></h2>
-            <p class="lede">Adakole Ijogi is the PDP candidate for the FCT Senate seat in the 2027 election. A political economist and development expert, he also works in IT and big data analytics, and describes himself as a researcher, an artist and a believer in a renaissance for Black Africa. Torah Nexus branded his campaign movement and made the documentary in which he speaks directly to the people of the FCT about his plans.</p>
-            <ul class="client-list">
-              <li><b>Campaign branding</b><span>A consistent look for the movement across video and social media.</span></li>
-              <li><b>Campaign video</b><span>Filmed and produced by Torah Nexus.</span></li>
-              <li><b>Documentary</b><span>His story and his plans for the FCT, in his own words.</span></li>
-            </ul>
-            <a class="link-more" href="${IG.adakole}" target="_blank" rel="noopener">See the campaign on Instagram →</a>
-          </div>
-        </div>
-      </section>
+      ${clientSpotlight()}
       <section class="wrap" aria-labelledby="h-stills">
         <div class="section-head"><div><span class="eyebrow">From the commercial</span><h2 id="h-stills" style="margin-top:8px">Frames <em>we're proud of.</em></h2></div></div>
         <div class="stills">${stills.map(([f, c]) => `<figure><img src="${MEDIA + f}" alt="${esc(c)}"><figcaption>${esc(c)}</figcaption></figure>`).join("")}</div>
       </section>
       <section class="wrap">
-        <div class="section-head"><div><span class="eyebrow">More videos</span><h2 style="margin-top:8px">New reels <em>every week.</em></h2><p class="lede">Behind-the-scenes clips, talent features and campaign reels live on our Instagram.</p></div>
+        <div class="section-head"><div><span class="eyebrow">More videos</span><h2 style="margin-top:8px">New reels <em>every week.</em></h2><p class="lede">Behind-the-scenes clips, event highlights and campaign reels live on our Instagram.</p></div>
         <a class="btn btn-crimson" href="${IG.nexus}" target="_blank" rel="noopener">${icon("ig")} Watch on Instagram</a></div>
       </section>
-      ${ctaBand()}`;
-  }
-
-  function viewTalent() {
-    return `
-      <section class="wrap page-title">
-        <span class="eyebrow">Our talent</span>
-        <h1>Faces of <em>Torah Nexus.</em></h1>
-        <p class="lede">Actors, presenters and models signed to Torah Nexus for commercials, campaigns and film. To book any of them, get in touch.</p>
-      </section>
-      <section class="wrap" aria-label="Talent roster"><div class="talent-grid">${talent.map(talentCard).join("")}</div></section>
       ${ctaBand()}`;
   }
 
@@ -416,7 +398,7 @@
         <div>
           <span class="eyebrow">About us</span>
           <h1>Power in <em>every message.</em></h1>
-          <p class="lede">Torah Nexus is the media and communication company of Torah Holdings, based in Asokoro, Abuja. We help brands tell their story through film, design, digital marketing, PR and events, and we develop the talent who bring those stories to life.</p>
+          <p class="lede">Torah Nexus is the media and communication company of Torah Holdings, based in Asokoro, Abuja. We help brands tell their story through film, design, digital marketing, PR and events.</p>
         </div>
         <img src="${MEDIA}logo-lockup-light.jpg" alt="Torah Nexus logo: A subsidiary of Torah Holdings Group" style="border-radius:20px;border:1px solid var(--line);width:100%;max-width:440px;justify-self:center">
       </section>
@@ -445,7 +427,7 @@
       <section class="wrap page-title">
         <span class="eyebrow">Contact</span>
         <h1>Let's build <em>your presence.</em></h1>
-        <p class="lede">Tell us about your project, book one of our talent, or ask a question.</p>
+        <p class="lede">Tell us about your project or ask a question.</p>
       </section>
       <section class="wrap contact-layout">
         <form class="contact-form js-contact" novalidate>
@@ -454,7 +436,7 @@
             <div class="field"><label for="c-phone">Phone or email</label><input id="c-phone" autocomplete="email" required><span class="err-text" hidden>Please add a phone number or email so we can reply.</span></div>
           </div>
           <div class="field"><label for="c-type">What do you need?</label>
-            <select id="c-type">${services.map((s) => `<option>${esc(s.title)}</option>`).join("")}<option>Book our talent</option><option>Something else</option></select>
+            <select id="c-type">${services.map((s) => `<option>${esc(s.title)}</option>`).join("")}<option>Something else</option></select>
           </div>
           <div class="field"><label for="c-msg">Tell us about it</label><textarea id="c-msg" rows="6" required></textarea><span class="err-text" hidden>Please write a short message.</span></div>
           <div><button class="btn btn-crimson" type="submit">Send on WhatsApp</button></div>
@@ -483,7 +465,7 @@
           <div class="ask-side-intro">
             <span class="eyebrow">Ask Nexus</span>
             <p class="ask-side-title">A clear question. <em>A way forward.</em></p>
-            <p class="meta">Ready answers about Torah Nexus: film, design, campaigns, talent and how we work.</p>
+            <p class="meta">Ready answers about Torah Nexus: film, design, campaigns, events and how we work.</p>
           </div>
           <div class="ask-side-actions">
             <button class="ask-new" type="button" data-ask-reset>New conversation ${icon("plus")}</button>
@@ -554,7 +536,7 @@
             ${row("phone", `<a href="tel:+2349067102801">+234 (0)906 710 2801</a>`)}
             ${row("phone", `<a href="tel:+2349133799396">+234 (0)913 379 9396</a>`)}
             ${m.email ? row("mail", `<a href="mailto:${esc(m.email)}">${esc(m.email)}</a>`) : ""}
-            ${row("ig", `<a href="https://www.instagram.com/${m.ig}/" target="_blank" rel="noopener">@${esc(m.ig)}</a>`)}
+            ${m.ig ? row("ig", `<a href="https://www.instagram.com/${m.ig}/" target="_blank" rel="noopener">@${esc(m.ig)}</a>`) : ""}
             ${row("pin", "Cluster B, Admiralty Estate, Asokoro, Abuja")}
           </ul>
           <div class="profile-actions">
@@ -573,13 +555,13 @@
     </section>` : ""}`;
   }
 
-  const ROUTES = { home: viewHome, work: viewWork, talent: viewTalent, services: viewServices, about: viewAbout, articles: viewArticles, contact: viewContact, ask: viewAsk };
-  const TITLES = { home: "Torah Nexus", work: "Our Work · Torah Nexus", talent: "Our Talent · Torah Nexus", services: "Services · Torah Nexus", about: "About · Torah Nexus", articles: "Articles · Torah Nexus", contact: "Contact · Torah Nexus", ask: "Ask Nexus · Torah Nexus" };
+  const ROUTES = { home: viewHome, work: viewWork, services: viewServices, about: viewAbout, articles: viewArticles, contact: viewContact, ask: viewAsk };
+  const TITLES = { home: "Torah Nexus", work: "Our Work · Torah Nexus", services: "Services · Torah Nexus", about: "About · Torah Nexus", articles: "Articles · Torah Nexus", contact: "Contact · Torah Nexus", ask: "Ask Nexus · Torah Nexus" };
   const member = () => { const m = location.hash.match(/^#team\/([a-z-]+)$/); return m && team.find((t) => t.slug === m[1]); };
   const route = () => { const h = location.hash.slice(1); return ROUTES[h] ? h : member() ? "member" : "home"; };
 
   // Gentle fade-up as sections scroll into view
-  const REVEAL = ".page-title, .intro, .section-head, .stats, .feature, .client-case, .service, .process li, .talent, .team-band, .brand, .card-article, .stills figure, .cta-band, .info-card, .contact-form, .ask-strip, .profile-others";
+  const REVEAL = ".page-title, .intro, .section-head, .stats, .feature, .client-case, .service, .process li, .team-band, .brand, .card-article, .stills figure, .cta-band, .info-card, .contact-form, .ask-strip, .profile-others";
   let io, pendingAsk = null;
   // Count a number up from zero when it scrolls into view
   function countUp(el) {
