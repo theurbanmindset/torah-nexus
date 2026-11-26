@@ -805,3 +805,14 @@ input:focus, textarea:focus, select:focus { outline-color: var(--gold); }
 .talk-social a:hover { color: var(--gold); }
 .talk-social a:hover i { border-color: var(--gold); }
 .talk-social { display: grid; gap: 12px; justify-items: start; }
+/* Phones: brand links as three neat tiles, icon above name */
+@media (max-width: 760px) {
+  .talk-social { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; width: 100%; justify-items: stretch; }
+  .talk-social a { flex-direction: column; justify-content: center; gap: 10px; padding: 16px 6px 14px; border: 1px solid rgba(255,255,255,0.14); text-align: center; font-size: 0.6rem; letter-spacing: 0.14em; line-height: 1.35; }
+  .talk-social a i { width: 40px; height: 40px; }
+  .talk-social a:hover { border-color: var(--gold); }
+}
+/* Side tabs step aside when the footer is on screen */
+.side-dock { transition: opacity 0.3s ease; }
+body.at-footer .side-dock { opacity: 0; pointer-events: none; }
+@media (max-width: 760px) { .talk-social a { justify-content: flex-start; } .talk-social a span { min-height: 2.7em; display: grid; align-items: start; } }

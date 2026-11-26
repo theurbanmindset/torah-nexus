@@ -747,6 +747,7 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("hashchange", () => setTimeout(onScroll, 260));
     setTimeout(onScroll, 0);
+    if ("IntersectionObserver" in window) new IntersectionObserver((en) => document.body.classList.toggle("at-footer", en[0].isIntersecting), { threshold: 0.05 }).observe($(".site-footer"));
     $(".js-theme").addEventListener("click", () => setTheme(isDark() ? "light" : "dark"));
     $(".menu-btn").addEventListener("click", (e) => { const panel = $("#menu-panel"); panel.hidden = !panel.hidden; e.currentTarget.setAttribute("aria-expanded", String(!panel.hidden)); });
     $("#year").textContent = new Date().getFullYear();
