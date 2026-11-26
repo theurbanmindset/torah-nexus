@@ -63,21 +63,21 @@
   ];
 
   const articles = [
-    { id: "story-not-ad", nexus: true, title: "Why Your Brand Needs a Story, Not Just an Ad", author: "Torah Nexus Team", read: 2, img: "still-family.jpg",
+    { id: "story-not-ad", nexus: true, title: "Why Your Brand Needs a Story, Not Just an Ad", author: "Sussana Igboanugo", read: 2, img: "still-family.jpg",
       excerpt: "People forget slogans. They remember how a story made them feel. Here is how we build commercials around a single human moment.",
       body: [
         "Most adverts list features. The ones people remember show a moment: a family at dinner, a key handed over, a child laughing at the table.",
         "When we plan a commercial, we start with one question. What should the viewer feel in the last five seconds? Everything else in the script works toward that feeling.",
         "> Power in every message starts with knowing which message matters most.",
       ] },
-    { id: "behind-the-scenes", nexus: true, title: "Behind the Scenes: Filming Across Six Brands in One Commercial", author: "Torah Nexus Team", read: 2, img: "still-nexus.jpg",
+    { id: "behind-the-scenes", nexus: true, title: "Behind the Scenes: Filming Across Six Brands in One Commercial", author: "Sharon Nurudeen", read: 2, img: "still-switch-meeting.jpg",
       excerpt: "One film, six companies and a single story. A look at how a group commercial is planned so every brand gets its moment.",
       body: [
         "A group commercial has a hard job. It has to introduce several businesses without feeling like a list.",
         "The answer is a thread that runs through every scene. Each brand appears where it fits naturally in that story.",
         "> Every brand gets its moment, and every moment serves the story.",
       ] },
-    { id: "content-people-cant-ignore", nexus: true, title: "Five Ways to Make Content People Can't Ignore", author: "Torah Nexus Team", read: 2, img: "still-signature.jpg",
+    { id: "content-people-cant-ignore", nexus: true, title: "Five Ways to Make Content People Can't Ignore", author: "Faleye Oluwasegun Emmanuel", read: 2, img: "still-signature.jpg",
       excerpt: "Designed with strategy, served with impact. Practical habits for social content that stops the scroll.",
       body: [
         "Open with the most interesting frame. You have about a second before someone scrolls past.",
@@ -286,15 +286,17 @@
       <section class="hero on-dark" aria-label="Torah Nexus">
         <img class="hero-poster" src="${MEDIA}hero-poster.jpg" alt="">
         ${saveData() ? "" : `<video class="js-hero-video" src="${MEDIA}${matchMedia("(max-width: 760px)").matches ? "hero-loop-mobile.mp4" : "hero-loop.mp4"}" poster="${MEDIA}hero-poster.jpg" muted loop playsinline preload="auto" aria-hidden="true"></video>`}
+        <span class="hero-rule" aria-hidden="true"></span>
         <div class="wrap hero-inner">
-          <span class="hero-kicker">Film. Design. Communication.</span>
-          <h1>Power in <span>every message.</span></h1>
-          <p class="hero-sub"><em>A media and communication house in Abuja.</em> We cook up content people can't ignore, designed with strategy and served with impact.</p>
+          <span class="hero-kicker">Media &amp; Communication · Abuja, Nigeria</span>
+          <h1>Power in Every <span><i>M</i>essage</span></h1>
+          <p class="hero-sub">Torah Nexus is the media and communication house of Torah Holdings. We cook up content people can't ignore, designed with strategy and served with impact.</p>
           <div class="hero-actions">
-            <button class="btn btn-gold" data-play="0"><span class="play-dot"></span>Watch our latest commercial</button>
-            <a class="btn btn-line" href="#services">See what we do</a>
+            <a class="btn btn-gold" href="#work">Explore our work <span aria-hidden="true">→</span></a>
+            <button class="btn btn-ghost" data-play="0"><span class="play-ring" aria-hidden="true"></span>Watch our commercial</button>
           </div>
         </div>
+        <span class="hero-scroll" aria-hidden="true"><span></span>Scroll</span>
       </section>
       <div class="ticker" aria-label="Our services"><div class="ticker-track">${ticker}${ticker.replace(/<span>/g, '<span aria-hidden="true">')}</div></div>
       <div class="wrap"><div class="stats">
@@ -618,6 +620,8 @@
   function render() {
     const r = route();
     const html = (r === "member" ? viewMember(member()) : ROUTES[r]()).replace(/<img (?![^>]*hero-poster)/g, '<img loading="lazy" decoding="async" ');
+    document.body.dataset.route = r;
+    $(".site-header").classList.toggle("scrolled", window.scrollY > 40 || r !== "home");
     $("#main").innerHTML = `<div class="view">${html}</div>`;
     $("#main").classList.remove("page-out");
     reveal();
@@ -684,7 +688,7 @@
   // ---------- Theme ----------
   function setTheme(t) {
     document.documentElement.setAttribute("data-theme", t);
-    try { localStorage.setItem("tn-theme", t); } catch (e) {}
+    try { localStorage.setItem("tn2-theme", t); } catch (e) {}
   }
   const isDark = () => { const t = document.documentElement.getAttribute("data-theme"); return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; };
 
@@ -729,14 +733,20 @@
       if (bad && ok) { f.focus(); ok = false; }
     });
     if (!ok) { msg.className = "form-msg err"; msg.textContent = "Please fill in the highlighted fields."; return; }
-    const text = `Hello Torah Nexus, my name is ${$("#c-name").value.trim()}.\nI need: ${$("#c-type").value}\n\n${$("#c-msg").value.trim()}\n\nReach me on: ${$("#c-phone").value.trim()}`;
+    const k = form.classList.contains("js-foot") ? "f" : "c", v = (n) => $(`#${k}-${n}`, form).value.trim();
+    const text = `Hello Torah Nexus, my name is ${v("name")}.\nI need: ${v("type")}\n\n${v("msg")}\n\nReach me on: ${v("phone")}`;
     window.open(WA(text), "_blank", "noopener");
     msg.className = "form-msg ok";
     msg.textContent = "Thanks! WhatsApp has opened with your message. Tap send there and we'll get back to you.";
   });
 
   function init() {
-    try { const t = localStorage.getItem("tn-theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+    try { const t = localStorage.getItem("tn2-theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+    const hdr = $(".site-header");
+    const onScroll = () => hdr.classList.toggle("scrolled", window.scrollY > 40 || document.body.dataset.route !== "home");
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("hashchange", () => setTimeout(onScroll, 260));
+    setTimeout(onScroll, 0);
     $(".js-theme").addEventListener("click", () => setTheme(isDark() ? "light" : "dark"));
     $(".menu-btn").addEventListener("click", (e) => { const panel = $("#menu-panel"); panel.hidden = !panel.hidden; e.currentTarget.setAttribute("aria-expanded", String(!panel.hidden)); });
     $("#year").textContent = new Date().getFullYear();
